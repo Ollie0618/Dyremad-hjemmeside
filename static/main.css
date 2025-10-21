@@ -1,0 +1,311 @@
+/* === GLOBAL STYLING === */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e0d4b7;
+    color: #203924;
+    text-align: center;
+
+    /* Flex-layout for at skubbe footer til bund */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* fylder hele højden af vinduet */
+}
+
+/* Wrapper omkring alt indhold over footer */
+.content-wrapper {
+    flex: 1; /* fylder al ledig plads */
+    padding-top: 70px; /* plads til header */
+}
+
+/* === HEADER MENU (rettet) === */
+.header {
+    position: fixed; /* sidder øverst */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #9bb48c;
+    color: #203924;
+    display: flex;
+    justify-content: space-between; /* LOGIN til venstre, KURV til højre */
+    align-items: center;
+    padding: 15px 40px; /* mindre højde, stadig plads i siderne */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+/* Links i headeren */
+.header a {
+    text-decoration: none;
+    color: #203924;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0; /* forhindrer at knapper krymper */
+    padding: 5px 10px; /* ekstra klikområde */
+}
+
+/* Specifikt for KURV-knappen */
+.header a.kurv {
+    margin-left: 20px;
+}
+
+/* === INDEX PAGE === */
+.index-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #203924;
+}
+.index-buttons {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.index-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 120px;
+    border: 2px solid #203924;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #203924;
+    background-color: #f9f7ec;
+    transition: all 0.3s ease;
+}
+.index-buttons a:hover {
+    background: #9bb48c;
+    transform: scale(1.05);
+}
+
+/* === OM OS SEKTION === */
+.about {
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 160px; /* kæmpe mellemrum til footer */
+}
+
+/* === PRODUKTSIDER === */
+.page-title {
+    margin-top: 100px; /* plads til header + lidt luft */
+    font-size: 36px;
+    font-weight: bold;
+    color: #203924;
+}
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #203924;
+    font-weight: bold;
+}
+.back-link:hover {
+    text-decoration: underline;
+    color: #4a7155;
+}
+
+/* === SØGEFELT === */
+.search-box {
+    margin: 30px auto;
+}
+.search-box input {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #203924;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #203924;
+}
+.search-box button {
+    padding: 10px 16px;
+    border: 1px solid #203924;
+    background: #9bb48c;
+    color: #203924;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.search-box button:hover {
+    background: #849e75;
+}
+
+/* === PRODUKT GRID === */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* === PRODUKTKORT === */
+.product-card {
+    position: relative;
+    border: 2px solid #203924;
+    border-radius: 12px;
+    padding: 12px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #f9f7ec;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.product-id {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #203924;
+}
+
+/* === PRODUKTBILLEDE === */
+.product-image {
+    width: 100%;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.product-image img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* === PRODUKTINFO === */
+.product-info {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+/* === KURV === */
+.kurv-title {
+    margin-top: 60px;
+    font-size: 32px;
+    font-weight: bold;
+}
+.kurv-list {
+    width: 60%;
+    margin: 40px auto;
+}
+.kurv-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #203924;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f9f7ec;
+    border-radius: 8px;
+}
+.kurv-item span {
+    font-size: 18px;
+}
+
+/* === FORSIDE BILLEDER – dobbelt størrelse === */
+.image-container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* større mellemrum mellem billeder */
+    flex-wrap: wrap;
+}
+.image-button {
+    position: relative;
+    display: inline-block;
+    width: 440px;  /* tidligere 220px */
+    height: 300px; /* tidligere 150px */
+    overflow: hidden;
+    border: 2px solid #203924;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    background-color: #f9f7ec;
+}
+.image-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.image-button span {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.85);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #203924;
+    padding: 5px 0;
+}
+.image-button:hover {
+    transform: scale(1.05);
+    background: #9bb48c;
+}
+
+/* === TILFØJ NY MAD FORM === */
+form[action="/add"] {
+    margin-top: 50px;
+}
+form[action="/add"] input {
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid #203924;
+    border-radius: 4px;
+    background: #fff;
+    color: #203924;
+}
+form[action="/add"] button {
+    padding: 8px 16px;
+    border: 1px solid #203924;
+    background: #9bb48c;
+    color: #203924;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+form[action="/add"] button:hover {
+    background: #849e75;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: #9bb48c;
+    color: #203924;
+    text-align: center;
+    padding: 8px 20px; /* lidt mindre end før */
+    font-size: 14px; /* mindre tekst */
+}
+footer a.admin {
+    color: #203924;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a.admin:hover {
+    text-decoration: underline;
+}

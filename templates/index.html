@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Forside</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <a href="{{ url_for('login_page') }}" class="login">LOGIN</a>
+        <a href="{{ url_for('kurv_page') }}" class="kurv">KURV</a>
+    </div>
+
+    <!-- Titel -->
+    <h1 class="index-title">DYREMAD.DK</h1>
+
+    <!-- Knapper til Kattemad og Hundemad -->
+    <div class="image-container">
+        <a href="{{url_for('kattemad_page')}}" class="image-button">
+            <img src="{{ url_for('static', filename='kattemad.jpg') }}" alt="Kattemad">
+        </a>
+        <a href="{{url_for('hundemad_page')}}" class="image-button">
+            <img src="{{ url_for('static', filename='hundemad.jpg') }}" alt="Hundemad">
+        </a>
+    </div>
+
+
+    <!-- Om os sektion -->
+    <div class="about">
+        <h2>Om os</h2>
+        <p>
+            Vi leverer kvalitetsfoder til både katte og hunde. 
+            Brovse igennem vores store udvalg og find det produkt<br>
+            som passer bedst til din hund eller kat. Eller brug vores
+            søgefunktion til at finde hrugtigt frem til det du leder efter.<br>
+        </p>
+    </div>
+
+<footer>
+    <p>&copy; 2024 Dyremad.dk       <a href="{{ url_for('admin_page') }}" class="admin">Admin panel</a></p>
+</footer>
+
+</body>
+</html>

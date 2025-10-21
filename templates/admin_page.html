@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+
+    <h1 class="page-title">HUNDEMAD</h1>
+    <a href="{{url_for('front_page')}}" class="back-link">TILBAGE</a>
+
+
+    <h2>Tilføj ny kattemad</h2>
+    <form method="POST" action="/add_kattemad">
+        <input type="text" name="brand" placeholder="Brand" required>
+        <input type="text" name="meattype" placeholder="Meattype" required>
+        <input type="text" name="weight" placeholder="Weight" required>
+        <button type="submit">Tilføj</button>
+    </form>
+
+    <h2>Tilføj ny hundemad</h2>
+    <form method="POST" action="/add">
+        <input type="text" name="brand" placeholder="Brand" required>
+        <input type="text" name="meattype" placeholder="Meattype" required>
+        <input type="text" name="weight" placeholder="Weight" required>
+        <button type="submit">Tilføj</button>
+    </form>
+</body>    

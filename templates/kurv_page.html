@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Kurv</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+    <!-- Header med LOGIN og KURV -->
+    <div class="header">
+        <a href="{{ url_for('login_page') }}" class="login">LOGIN</a>
+        <a href="{{ url_for('front_page') }}" class="kurv">FORSIDE</a>
+    </div>
+
+    <!-- Titel -->
+    <div class="content-wrapper">
+    <h1 class="kurv-title">KURV</h1></div>
+
+    <!-- Liste over varer -->
+    <div class="kurv-list">
+        <p>Din kurv er tom.</p>
+    </div>
+
+</body>
+</html>

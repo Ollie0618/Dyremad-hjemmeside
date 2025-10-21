@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <a href="{{ url_for('login_page') }}" class="login">LOGIN</a>
+        <a href="{{ url_for('kurv_page') }}" class="kurv">KURV</a>
+    </div>
+
+    <!-- SIDE TITEL OG NAVIGATION -->
+    <h1 class="page-title">KATTEMAD</h1>
+    <a href="{{ url_for('front_page') }}" class="back-link">TILBAGE</a>
+
+    <!-- SØGEFELT -->
+    <form method="get" action="{{ url_for('kattemad_page') }}" class="search-box">
+        <input type="text" name="search" placeholder="Søg..." value="{{ search }}">
+        <button type="submit">Søg</button>
+    </form>
+
+    <!-- PRODUKT GRID -->
+    <div class="product-grid">
+        {% for row in data %}
+        <div class="product-card">
+            <div class="product-id">#{{ row.id }}</div>
+            <div class="product-image">
+                {% if row.id == 1 %}
+                    <img src="{{ url_for('static', filename='images/kattemadp1.jpg') }}" alt="Kattemad produkt 1">
+                {% endif %}
+            </div>
+            <div class="product-info">
+                <p><strong>Mærke:</strong> {{ row.brand }}</p>
+                <p><strong>Kødtype:</strong> {{ row.meattype }}</p>
+                <p><strong>Vægt:</strong> {{ row.weight }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+
